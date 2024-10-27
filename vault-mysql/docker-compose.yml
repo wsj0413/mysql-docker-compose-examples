@@ -1,7 +1,7 @@
 version: '3'
 services:
   vault:
-    image: vault
+    image: hashicorp/vault
     command: server -dev
     ports: 
       - "8200:8200"
@@ -9,7 +9,7 @@ services:
       VAULT_DEV_ROOT_TOKEN_ID: f420103a-e656-33f2-6834-0dd2d4cd4f35
       VAULT_DEV_LISTEN_ADDRESS: 0.0.0.0:8200
   vault-client:
-    image: vault
+    image: hashicorp/vault
     command:
       - /bin/sh 
       - -c
